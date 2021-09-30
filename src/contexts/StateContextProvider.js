@@ -49,9 +49,7 @@ export const StateContextProvider = ({ children }) => {
 
   const getVideoResults = async () => {
     setLoading(true);
-    const data = await fetchData(
-      `${baseUrl}/search/q=${searchTerm} videos`,
-    );
+    const data = await fetchData(`${baseUrl}/search/q=${searchTerm} videos`);
     setResults({ videoResults: data });
     setLoading(false);
   };

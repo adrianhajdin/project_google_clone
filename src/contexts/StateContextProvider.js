@@ -10,6 +10,7 @@ export const StateContextProvider = ({ children }) => {
 
   const getResults = async (url) => {
     setLoading(true);
+
     const res = await fetch(`${baseUrl}${url}`, {
       method: 'GET',
       headers: {
@@ -17,21 +18,15 @@ export const StateContextProvider = ({ children }) => {
         'x-rapidapi-key': process.env.REACT_APP_API_KEY,
       },
     });
+
     const data = await res.json();
+
     setResults(data);
     setLoading(false);
   };
 
   return (
-    <StateContext.Provider
-      value={{
-        getResults,
-        results,
-        searchTerm,
-        setSearchTerm,
-        loading,
-      }}
-    >
+    <StateContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, loading }}>
       {children}
     </StateContext.Provider>
   );

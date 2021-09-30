@@ -26,7 +26,11 @@ export const Search = () => {
         onChange={(e) => setText(e.target.value)}
       />
       {text !== '' && (
-        <button type="button" onClick={() => setText('')} className="absolute top-1.5 right-4 text-2xl text-gray-500 ">
+        <button
+          type="button"
+          className="absolute top-1.5 right-4 text-2xl text-gray-500 "
+          onClick={() => setText('')}
+        >
           x
         </button>
       )}

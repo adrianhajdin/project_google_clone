@@ -1,26 +1,25 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import { ImageResults } from './ImageResults';
-import { NewsResults } from './NewsResults';
-import { SearchResults } from './SearchResults';
-import { VideoResults } from './VideoResults';
+import { Results } from './Results';
 
 export const Routes = () => (
   <div className="p-4">
     <Switch>
-      <Route exact path="/">
-        <SearchResults />
+      <Route exact path="/search">
+        <Results />
       </Route>
       <Route path="/images">
-        <ImageResults />
+        <Results />
       </Route>
       <Route path="/news">
-        <NewsResults />
+        <Results />
       </Route>
       <Route path="/videos">
-        <VideoResults />
+        <Results />
       </Route>
+
     </Switch>
   </div>
+
 );

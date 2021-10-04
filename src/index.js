@@ -7,13 +7,11 @@ import { StateContextProvider } from './contexts/StateContextProvider';
 import './global.css';
 
 ReactDom.render(
-  <React.StrictMode>
-    <StateContextProvider>
-      <Router>
-        <App />
-      </Router>
-    </StateContextProvider>
-  </React.StrictMode>,
+  <StateContextProvider>
+    <Router>
+      <App />
+    </Router>
+  </StateContextProvider>,
   document.getElementById('root'),
 );
 
